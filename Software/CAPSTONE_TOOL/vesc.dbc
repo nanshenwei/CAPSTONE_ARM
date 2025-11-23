@@ -1,0 +1,161 @@
+VERSION "VESC CAN DBC (IDs = (cmd_id<<8)|vesc_id, 29-bit Extended)"
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_DEF_
+    CAT_
+    FILTER
+    BA_DEF_DEF_
+    EV_
+    ENVVAR_DATA_
+    SGTYPE_
+    SGTYPE_VAL_
+    BA_DEF_SGTYPE_
+    BA_SGTYPE_
+    SIG_TYPE_REF_
+    VAL_TABLE_
+    SIG_GROUP_
+    SIG_VALTYPE_
+    SIGTYPE_VALTYPE_
+    BO_TX_BU_
+    BA_DEF_REL_
+    BA_REL_
+    BA_DEF_DEF_REL_
+    BU_SG_REL_
+    BU_EV_REL_
+    BU_BO_REL_
+    SG_MUL_VAL_
+
+BS_ :
+BU_: MASTER VESC1 VESC2 VESC3 VESC4
+
+CM_ "All frames use 29-bit extended IDs. Arbitration ID = (CommandID << 8) | VESC_ID. Big-endian payloads.";
+
+BO_ 2305 VESC1_STATUS: 8 VESC1
+ SG_ ERPM : 0|32@1- (1,0) [-2147483648|2147483647] "RPM" MASTER
+ SG_ MotorCurrent : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" MASTER
+ SG_ DutyCycle : 48|16@1- (0.001,0) [-32.768|32.767] "" MASTER
+
+BO_ 2306 VESC2_STATUS: 8 VESC2
+ SG_ ERPM : 0|32@1- (1,0) [-2147483648|2147483647] "RPM" MASTER
+ SG_ MotorCurrent : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" MASTER
+ SG_ DutyCycle : 48|16@1- (0.001,0) [-32.768|32.767] "" MASTER
+
+BO_ 2307 VESC3_STATUS: 8 VESC3
+ SG_ ERPM : 0|32@1- (1,0) [-2147483648|2147483647] "RPM" MASTER
+ SG_ MotorCurrent : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" MASTER
+ SG_ DutyCycle : 48|16@1- (0.001,0) [-32.768|32.767] "" MASTER
+
+BO_ 2308 VESC4_STATUS: 8 VESC4
+ SG_ ERPM : 0|32@1- (1,0) [-2147483648|2147483647] "RPM" MASTER
+ SG_ MotorCurrent : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" MASTER
+ SG_ DutyCycle : 48|16@1- (0.001,0) [-32.768|32.767] "" MASTER
+
+BO_ 4097 VESC1_STATUS_4: 8 VESC1
+ SG_ TempFET : 0|16@1- (0.1,0) [-3276.8|3276.7] "degC" MASTER
+ SG_ TempMotor : 16|16@1- (0.1,0) [-3276.8|3276.7] "degC" MASTER
+ SG_ CurrentIn : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" MASTER
+ SG_ PIDPos : 48|16@1- (0.02,0) [-655.34|655.34] "deg" MASTER
+
+BO_ 4098 VESC2_STATUS_4: 8 VESC2
+ SG_ TempFET : 0|16@1- (0.1,0) [-3276.8|3276.7] "degC" MASTER
+ SG_ TempMotor : 16|16@1- (0.1,0) [-3276.8|3276.7] "degC" MASTER
+ SG_ CurrentIn : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" MASTER
+ SG_ PIDPos : 48|16@1- (0.02,0) [-655.34|655.34] "deg" MASTER
+
+BO_ 4099 VESC3_STATUS_4: 8 VESC3
+ SG_ TempFET : 0|16@1- (0.1,0) [-3276.8|3276.7] "degC" MASTER
+ SG_ TempMotor : 16|16@1- (0.1,0) [-3276.8|3276.7] "degC" MASTER
+ SG_ CurrentIn : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" MASTER
+ SG_ PIDPos : 48|16@1- (0.02,0) [-655.34|655.34] "deg" MASTER
+
+BO_ 4100 VESC4_STATUS_4: 8 VESC4
+ SG_ TempFET : 0|16@1- (0.1,0) [-3276.8|3276.7] "degC" MASTER
+ SG_ TempMotor : 16|16@1- (0.1,0) [-3276.8|3276.7] "degC" MASTER
+ SG_ CurrentIn : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" MASTER
+ SG_ PIDPos : 48|16@1- (0.02,0) [-655.34|655.34] "deg" MASTER
+
+BO_ 6913 VESC1_STATUS_5: 6 VESC1
+ SG_ Tachometer : 0|32@1- (0.1666667,0) [-35791394.5|35791394.5] "EREV" MASTER
+ SG_ Vin : 32|16@1+ (0.1,0) [0|6553.5] "V" MASTER
+
+BO_ 6914 VESC2_STATUS_5: 6 VESC2
+ SG_ Tachometer : 0|32@1- (0.1666667,0) [-35791394.5|35791394.5] "EREV" MASTER
+ SG_ Vin : 32|16@1+ (0.1,0) [0|6553.5] "V" MASTER
+
+BO_ 6915 VESC3_STATUS_5: 6 VESC3
+ SG_ Tachometer : 0|32@1- (0.1666667,0) [-35791394.5|35791394.5] "EREV" MASTER
+ SG_ Vin : 32|16@1+ (0.1,0) [0|6553.5] "V" MASTER
+
+BO_ 6916 VESC4_STATUS_5: 6 VESC4
+ SG_ Tachometer : 0|32@1- (0.1666667,0) [-35791394.5|35791394.5] "EREV" MASTER
+ SG_ Vin : 32|16@1+ (0.1,0) [0|6553.5] "V" MASTER
+
+BO_ 1025 MASTER_SET_POS_VESC1: 4 MASTER
+ SG_ TargetPosDeg : 0|32@1- (0.000001,0) [0|360] "deg" VESC1
+
+BO_ 1026 MASTER_SET_POS_VESC2: 4 MASTER
+ SG_ TargetPosDeg : 0|32@1- (0.000001,0) [0|360] "deg" VESC2
+
+BO_ 1027 MASTER_SET_POS_VESC3: 4 MASTER
+ SG_ TargetPosDeg : 0|32@1- (0.000001,0) [0|360] "deg" VESC3
+
+BO_ 1028 MASTER_SET_POS_VESC4: 4 MASTER
+ SG_ TargetPosDeg : 0|32@1- (0.000001,0) [0|360] "deg" VESC4
+
+BO_ 769 MASTER_SET_RPM_VESC1: 4 MASTER
+ SG_ TargetRPM : 0|32@1- (1,0) [-2147483648|2147483647] "RPM" VESC1
+
+BO_ 770 MASTER_SET_RPM_VESC2: 4 MASTER
+ SG_ TargetRPM : 0|32@1- (1,0) [-2147483648|2147483647] "RPM" VESC2
+
+BO_ 771 MASTER_SET_RPM_VESC3: 4 MASTER
+ SG_ TargetRPM : 0|32@1- (1,0) [-2147483648|2147483647] "RPM" VESC3
+
+BO_ 772 MASTER_SET_RPM_VESC4: 4 MASTER
+ SG_ TargetRPM : 0|32@1- (1,0) [-2147483648|2147483647] "RPM" VESC4
+
+BO_ 14081 MASTER_UPDATE_PID_POS_OFFSET_VESC1: 5 MASTER
+ SG_ AngleNowDeg : 0|32@1- (0.0001,0) [-214748.3648|214748.3647] "deg" VESC1
+ SG_ Store : 32|8@1+ (1,0) [0|1] "" VESC1
+
+BO_ 14082 MASTER_UPDATE_PID_POS_OFFSET_VESC2: 5 MASTER
+ SG_ AngleNowDeg : 0|32@1- (0.0001,0) [-214748.3648|214748.3647] "deg" VESC2
+ SG_ Store : 32|8@1+ (1,0) [0|1] "" VESC2
+
+BO_ 14083 MASTER_UPDATE_PID_POS_OFFSET_VESC3: 5 MASTER
+ SG_ AngleNowDeg : 0|32@1- (0.0001,0) [-214748.3648|214748.3647] "deg" VESC3
+ SG_ Store : 32|8@1+ (1,0) [0|1] "" VESC3
+
+BO_ 14084 MASTER_UPDATE_PID_POS_OFFSET_VESC4: 5 MASTER
+ SG_ AngleNowDeg : 0|32@1- (0.0001,0) [-214748.3648|214748.3647] "deg" VESC4
+ SG_ Store : 32|8@1+ (1,0) [0|1] "" VESC4
+
+BA_DEF_ BO_ "VFrameFormat" ENUM "Standard","Extended";
+BA_ "VFrameFormat" BO_ 2305 "Extended";
+BA_ "VFrameFormat" BO_ 2306 "Extended";
+BA_ "VFrameFormat" BO_ 2307 "Extended";
+BA_ "VFrameFormat" BO_ 2308 "Extended";
+BA_ "VFrameFormat" BO_ 4097 "Extended";
+BA_ "VFrameFormat" BO_ 4098 "Extended";
+BA_ "VFrameFormat" BO_ 4099 "Extended";
+BA_ "VFrameFormat" BO_ 4100 "Extended";
+BA_ "VFrameFormat" BO_ 6913 "Extended";
+BA_ "VFrameFormat" BO_ 6914 "Extended";
+BA_ "VFrameFormat" BO_ 6915 "Extended";
+BA_ "VFrameFormat" BO_ 6916 "Extended";
+BA_ "VFrameFormat" BO_ 1025 "Extended";
+BA_ "VFrameFormat" BO_ 1026 "Extended";
+BA_ "VFrameFormat" BO_ 1027 "Extended";
+BA_ "VFrameFormat" BO_ 1028 "Extended";
+BA_ "VFrameFormat" BO_ 769 "Extended";
+BA_ "VFrameFormat" BO_ 770 "Extended";
+BA_ "VFrameFormat" BO_ 771 "Extended";
+BA_ "VFrameFormat" BO_ 772 "Extended";
+BA_ "VFrameFormat" BO_ 14081 "Extended";
+BA_ "VFrameFormat" BO_ 14082 "Extended";
+BA_ "VFrameFormat" BO_ 14083 "Extended";
+BA_ "VFrameFormat" BO_ 14084 "Extended";
